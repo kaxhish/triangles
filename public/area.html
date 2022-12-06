@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./area.js"></script>
+</head>
+<body>
+    <div>
+        <!--navbar-->
+        <nav class="bg-fuchsia-500 w-screen h-24 flex justify-end px-24 space-x-14 text-white text-2xl p-6">
+            <a href="/">Quiz</a>
+            <a href="./isTriangle.html">IsTriangle</a>
+    <a href="./hypotenuse.html">Hypotenuse</a>
+    <a href="./area.html">Area</a>
+        </nav>
+        <!--section-->
+        <div class="flex flex-col items-center">
+            <h1 class="text-black font-bold text-4xl mt-14 m-4">Calculate Area of your beautiful triangle--</h1>
+            <h2 class="text-black font-bold text-2xl m-4">Just Input given Measurements</h2>
+           
+        <div class="m-2">
+                <h1 class="text-fuchsia-500 font-bold text-3xl m-6">Side 1</h1>
+                <input type="number" placeholder="value here" id="sides" class="w-60 h-10 border-fuchsia-500 border-2 border-solid text-xl p-6 rounded-xl"/>
+        </div>
+
+        <div class="m-2">
+            <h1 class="text-fuchsia-500 font-bold text-3xl m-6">SIde 2</h1>
+            <input type="number" placeholder="value here " id="sides" class="w-60 h-10 border-fuchsia-500 border-2 border-solid text-xl p-6 rounded-xl"/>
+        </div>
+
+        <div class="m-2">
+        <h1 class="text-fuchsia-500 font-bold text-3xl m-6">Side 3</h1>
+        <input type="number" placeholder="value here" id="sides" class="w-60 h-10 border-fuchsia-500 border-2 border-solid text-xl p-6 rounded-xl"/>
+        </div>
+
+        <button class="bg-fuchsia-500 rounded-xl p-4 m-8 text-white text-xl font-bold" id="submitBtn">Calculated Area here</button>
+        <div id="output" class="font-bold"></div>
+            </div>
+        </div>
+        <script>
+            window.onload=function(){
+const input = document.querySelectorAll("#sides");
+const findArea = document.querySelector("#submitBtn");
+const outputElement = document.querySelector("#output");
+
+function calculateAreaofTriangle(base, height){
+    const result =1/2 *[base* height];
+    //const area = [result/2];
+    return result;
+}
+
+function calculateArea(){
+    //console.log("I am clicked");
+    const areaOfTriangle = calculateAreaofTriangle(Number(input[0].value),Number(input[1].value));
+    //console.log(areaOfTriangle);
+    outputElement.innerText = "Area of Triangle is: " + areaOfTriangle +"cm²";
+}
+
+findArea.addEventListener('click', calculateArea);
+}
+        </script>
+</body>
+</html>
